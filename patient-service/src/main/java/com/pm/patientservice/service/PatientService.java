@@ -44,12 +44,15 @@ public class PatientService {
 
         System.out.println("Patient "+patient+" is found and is ready for update");
 
-        if(patientRepository.existsByEmail(patientRequestDTO.getEmail())) {
-            throw new EmailAlreadyExistsException("A Patient with this email "+ "already Exists "+patientRequestDTO.getEmail());
-        }else {
-            patient.setEmail(patientRequestDTO.getEmail());
-        }
+        if(patientRequestDTO.getEmail() != null && !patientRequestDTO.getEmail().equals(patient.getEmail())) {
 
+            if(patientRepository.existsByEmail(patientRequestDTO.getEmail())) {
+                throw new EmailAlreadyExistsException("A Patient with this email "+ "already Exists "+patientRequestDTO.getEmail());
+            }
+            else {
+                patient.setEmail(patientRequestDTO.getEmail());
+            }
+        }
         if(patientRequestDTO.getName()!=null) {
             patient.setName(patientRequestDTO.getName());
         }

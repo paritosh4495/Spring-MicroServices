@@ -3,9 +3,9 @@ POST http://localhost:4000/patients
 Content-Type: application/json
 
 {
-  "name": "Renuka WITH BILLING",
-  "email": "RenukaHursad@gmail.com",
-  "address": "GHODEGAON Nagar",
+  "name": "Kafka Renuka",
+  "email": "Kafka_test@gmail.com",
+  "address": "Kafka Nagar it Nagar",
   "dateOfBirth": "1995-05-05",
   "registeredDate": "2025-03-20"
 }
